@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!!! Ciciiiiiiiii :)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            overflow: hidden;
+            background-color:white;
+        }
+        body {
+            opacity: 0;
+            animation: fadeInPage 1.5s ease forwards;
+        }
+        .container {
+            text-align: center;
+            transition: transform 0.8s ease, opacity 0.8s ease;
+            position: relative;
+            color: white;
+        }
+
+        .container.hidden {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+
+        input {
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 300px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            font-size: 16px;
+            background-color: #f20044;
+            color: white;
+            border: none;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        button:hover {
+            transform: scale(0.95);
+            background-color: #c50239;
+            box-shadow: 0 0 20px #f20044;
+        }
+        .warning-text {
+            color: red;
+            font-size: 14px;
+            margin-top: 20px;
+            display: none;
+        }
+        .output {
+            display: none;
+            font-size: 24px;
+            color: black;
+            text-align: center;
+            white-space: normal;
+            max-width: 900px;
+            margin: 0 auto;
+            overflow: hidden;
+            word-wrap: break-word;
+            border-right: 2px solid white;
+        }
+        .new-button {
+            display: none;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #f20044;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .new-button:hover {
+            background-color: #c50239;
+        }
+        input {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .watermark {
+            position: fixed; 
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 15px; 
+            font-family: 'Times New Roman', Times, serif;
+            color: rgba(0, 0, 0, 0.2);
+            pointer-events: none; 
+            user-select: none; 
+            z-index: -1;
+            white-space: nowrap;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        @keyframes blink {
+            from { border-color: transparent; }
+            to { border-color: #333; }
+        }
+        .output {
+            animation: blink 0.7s step-end infinite;
+        }
+        @keyframes fadeInPage {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media screen and (max-width: 768px)
+        {
+            .watermark {
+                font-size: 10px; 
+            }
+
+            .output {
+                position: relative;
+                display: none;
+                font-size: 18px;
+                max-width: 768px;
+                top: -120px;
+            }
+
+            .new-button {
+                position: relative;
+                top: -120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="container">
+        <h1>Masukkan Nama Kamu</h1>
+        <input type="text" id="nameInput" placeholder="Ketik namamu di sini..." />
+        <div><button id="showMessage">liat pesan buat kamu :) </button></div>
+        <div class="warning-text" id="warningText">Nama nda bole kosong dong</div>
+    </div>
+    <div class="output" id="outputText"></div>
+    <a href="journey.html"><button class="new-button" id="newButton">ada sesuatu..</button></a>
+    <div class="watermark">Dibuat dengan ❤️ oleh Tian, untuk Gracia Ivana Pribadi</div>
+</body>
+<script>
+    const container = document.getElementById("container");
+    const nameInput = document.getElementById("nameInput");
+    const warningText = document.getElementById("warningText");
+    const showMessageButton = document.getElementById("showMessage");
+    const outputText = document.getElementById("outputText");
+    const newButton = document.getElementById("newButton");
+    const audio = document.getElementById("audio");
+
+    const templateText = (name) => 
+        `Haiii ${name}, let me start by saying thank you so much for coming into my life, I'm glad that you are exist. ${name}, pernah kebayang ga si kita bakal sampe sejauh ini? aku kira dulu kita ga bakalan bisa seakrab bahkan sedekat ini lhoo hehe... ntah kenapa, dari awal aku notice kamu, aku tuh mikir kalo 'kamu orangnya'. Aku dulu sempet nyerah tau, sempet mikir kalo kamu bener bener se ga bisa itu buat di dapet hehe...tau ga si? kamu tuh bener bener memotivasi aku buat terus berkembang, buat terus jadi lebih baik, kamu jadi motivasi aku ${name}, ini beneran aku ga bohong :). Intinya, dari apa yang sudah kita lalui selama ini, I hope for the best for us, n I wish we could be together forever.... eummm paling gitu dulu ajaa yaa, abis ini ada lagi kok hihi, Happy Birth Dayy Cicooo hehehe.. terakhir aku cuma mau bilang terimakasih, sudah mau nerima aku yang bukan apa apa ini, terimakasih semua suka dukanya selama ini, terimakasihh buat semua pelajaran yang secara ngga langsung kamu kasi ke aku, sekali lagi makasihh, I LOVE YOU ${name}`;
+
+    function typeText(text, element, callback) {
+        element.textContent = "";
+        let index = 0;
+
+        function type() {
+            if (index < text.length) {
+                element.textContent += text[index];
+                index++;
+                setTimeout(type, 50); 
+            } else if (callback) {
+                callback(); 
+            }
+        }
+
+        type();
+    }
+
+    showMessageButton.addEventListener("click", () => {
+        const name = nameInput.value.trim(); 
+        if (name) {
+            warningText.style.display = "none"; 
+            container.classList.add("hidden"); 
+            setTimeout(() => {
+                outputText.style.display = "block"; 
+                typeText(templateText(name), outputText, () => {
+                    newButton.style.display = "block";
+                    newButton.style.animation = "fadeIn 0.8s ease";
+                });
+            }, 800);
+        } else {
+            warningText.style.display = "block"; 
+        }
+    });
+</script>
+</html>
